@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI: The Excel of 2026 | For Rutuja</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Outfit for punchy headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        eaton: {
+                            blue: '#00539B',
+                            light: '#E6F0FA',
+                            dark: '#003366',
+                        },
+                        nostalgia: {
+                            teal: '#008080',
+                            gold: '#FFD700',
+                            purple: '#4B0082',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #00539B 0%, #008080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .retro-card {
+            box-shadow: 6px 6px 0px 0px rgba(0, 83, 155, 0.15);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+
+    <!-- Navigation / Header Bar -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 py-3.5 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-eaton-blue text-white p-2 rounded-lg font-bold text-lg leading-none">R</div>
+                <div>
+                    <span class="font-display font-bold text-slate-900 tracking-tight">Rutuja's AI Digest</span>
+                    <span class="hidden sm:inline-block text-xs bg-eaton-light text-eaton-blue px-2 py-0.5 rounded-full font-medium ml-2">Eaton Supply Chain Edition</span>
+                </div>
+            </div>
+            <nav class="flex items-center gap-4 text-sm font-medium text-slate-600">
+                <a href="#icebreaker" class="hover:text-eaton-blue transition">Nostalgia Quiz</a>
+                <a href="#why-ai" class="hover:text-eaton-blue transition">2026 Shift</a>
+                <a href="#assembly" class="hover:text-eaton-blue transition">The Assembly</a>
+                <a href="#day-in-life" class="hover:text-eaton-blue transition">Day in Life</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-16">
+
+        <!-- Hero Section -->
+        <section class="text-center py-10 space-y-6 relative overflow-hidden">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs sm:text-sm font-semibold border border-amber-200 shadow-sm">
+                <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
+                Special Briefing for the Best Supply Chain Analyst at Eaton
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-display font-extrabold text-slate-900 tracking-tight max-w-3xl mx-auto leading-tight">
+                Remember when learning <span class="gradient-text">VLOOKUP</span> felt like black magic?
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
+                From dial-up internet and floppy disks to managing global supply chain lead times. Welcome to 2026, where AI is officially the new <strong class="text-slate-900 font-semibold">Excel & PowerPoint</strong>!
+            </p>
+
+            <div class="flex justify-center items-center gap-3 pt-2 text-xs font-mono text-slate-500">
+                <span class="bg-slate-200/70 px-2.5 py-1 rounded">Floppy Disks ➔ GenAI</span>
+                <span>•</span>
+                <span class="bg-slate-200/70 px-2.5 py-1 rounded">Eaton Logistics</span>
+                <span>•</span>
+                <span class="bg-slate-200/70 px-2.5 py-1 rounded">'90s Kids Club ☕</span>
+            </div>
+        </section>
+
+        <!-- SECTION 1: ICE BREAKER QUIZ -->
+        <section id="icebreaker" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 retro-card transition-all">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 bg-teal-50 text-teal-700 rounded-xl">
+                        <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-display font-bold text-slate-900">Step 1: The '90s Nostalgia & Tech Check</h2>
+                        <p class="text-xs text-slate-500">Answer these quick 3 questions to unlock your personalized briefing!</p>
+                    </div>
+                </div>
+                <span id="quiz-progress" class="text-xs font-bold px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">0 / 3 Done</span>
+            </div>
+
+            <!-- Quiz Questions Container -->
+            <div class="space-y-6" id="quiz-container">
+                <!-- Question 1 -->
+                <div class="quiz-step space-y-3" data-step="1">
+                    <p class="font-medium text-slate-800">1. What sound immediately triggers core childhood memories for us '90s kids?</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <button onclick="answerQuiz(1, false, this)" class="p-3.5 text-left border rounded-xl hover:border-slate-400 transition text-sm flex items-center justify-between group">
+                            <span>A quiet, silent Wi-Fi connection</span>
+                            <i data-lucide="x-circle" class="w-4 h-4 text-red-400 opacity-0 group-hover:opacity-100"></i>
+                        </button>
+                        <button onclick="answerQuiz(1, true, this)" class="p-3.5 text-left border rounded-xl hover:border-eaton-blue transition text-sm flex items-center justify-between group font-medium">
+                            <span>The screeching dial-up modem sound 📡</span>
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 opacity-0 group-hover:opacity-100"></i>
+                        </button>
+                        <button onclick="answerQuiz(1, false, this)" class="p-3.5 text-left border rounded-xl hover:border-slate-400 transition text-sm flex items-center justify-between group">
+                            <span>Teams meeting notification ring</span>
+                            <i data-lucide="x-circle" class="w-4 h-4 text-red-400 opacity-0 group-hover:opacity-100"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-step space-y-3 hidden" data-step="2">
+                    <p class="font-medium text-slate-800">2. Back in 2010, what was considered the ultimate "I am a Supply Chain Wizard" flex at work?</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <button onclick="answerQuiz(2, false, this)" class="p-3.5 text-left border rounded-xl hover:border-slate-400 transition text-sm flex items-center justify-between">
+                            <span>Knowing how to print on A3 paper</span>
+                        </button>
+                        <button onclick="answerQuiz(2, true, this)" class="p-3.5 text-left border rounded-xl hover:border-eaton-blue transition text-sm flex items-center justify-between font-medium">
+                            <span>Writing nested INDEX-MATCH formulas and Pivot Tables 📊</span>
+                        </button>
+                        <button onclick="answerQuiz(2, false, this)" class="p-3.5 text-left border rounded-xl hover:border-slate-400 transition text-sm flex items-center justify-between">
+                            <span>Sending emails with high priority flags</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-step space-y-3 hidden" data-step="3">
+                    <p class="font-medium text-slate-800">3. In 2026, what takes your Eaton Supply Chain domain expertise to superhero levels?</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <button onclick="answerQuiz(3, false, this)" class="p-3.5 text-left border rounded-xl hover:border-slate-400 transition text-sm flex items-center justify-between">
+                            <span>Memorizing 1,000 shipment tracking numbers</span>
+                        </button>
+                        <button onclick="answerQuiz(3, false, this)" class="p-3.5 text-left border rounded-xl hover:border-slate-400 transition text-sm flex items-center justify-between">
+                            <span>Doing manual row-by-row SAP cross-checks</span>
+                        </button>
+                        <button onclick="answerQuiz(3, true, this)" class="p-3.5 text-left border rounded-xl hover:border-eaton-blue transition text-sm flex items-center justify-between font-medium">
+                            <span>Directing AI Agents with precise process specs 🚀</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Reward / Unlocked Banner -->
+                <div id="quiz-complete" class="hidden p-5 bg-emerald-50 border border-emerald-200 rounded-xl text-center space-y-2 animate-fade-in">
+                    <div class="inline-flex p-2 bg-emerald-100 rounded-full text-emerald-700 mb-1">
+                        <i data-lucide="trophy" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-emerald-950 text-lg">Verification Complete! 🎉</h3>
+                    <p class="text-sm text-emerald-800 max-w-xl mx-auto">
+                        You're officially qualified as a true '90s kid & Eaton domain master. Now let's explore why AI isn't replacing your work, but taking away all the boring manual parts of it!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WHY AI IS THE EXCEL OF 2026 -->
+        <section id="why-ai" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <h2 class="text-3xl font-display font-bold text-slate-900">Why AI is the Excel & PowerPoint of 2026</h2>
+                <p class="text-slate-600 text-sm">Think back 15 years ago—Excel didn't replace accountants or analysts. It freed them from manual ledger paper. AI is doing the exact same thing today.</p>
+            </div>
+
+            <!-- Comparison Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Era 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">The 1990s</span>
+                        <i data-lucide="floppy-disk" class="w-5 h-5 text-slate-400"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-800 text-lg">Typing & Word Processors</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Knowing basic computer literacy, MS-DOS, and typing speed was the key differentiator on resumes.
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500 font-mono">
+                        Main skill: Manual Data Entry
+                    </div>
+                </div>
+
+                <!-- Era 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">The 2010s</span>
+                        <i data-lucide="file-spreadsheet" class="w-5 h-5 text-emerald-600"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-800 text-lg">Excel & Powerpoint</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Mastering VLOOKUP, Pivot Tables, and making slides became mandatory for every Supply Chain Analyst.
+                    </p>
+                    <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500 font-mono">
+                        Main skill: Formulaic Analysis
+                    </div>
+                </div>
+
+                <!-- Era 3 (2026) -->
+                <div class="bg-gradient-to-br from-eaton-blue to-eaton-dark text-white p-6 rounded-2xl shadow-xl space-y-4 relative overflow-hidden">
+                    <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-amber-300 uppercase tracking-wider">Now in 2026</span>
+                        <i data-lucide="cpu" class="w-5 h-5 text-amber-300"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-white text-lg">AI Agents & Specs</h3>
+                    <p class="text-xs text-blue-100 leading-relaxed">
+                        You don't write syntax or crunch numbers row-by-row. You set parameters, edge cases, and review AI outputs.
+                    </p>
+                    <div class="pt-2 border-t border-white/20 text-[11px] text-amber-200 font-mono">
+                        Main skill: Process Architecture & Specs
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Takeaway Box -->
+            <div class="p-6 bg-amber-50/80 border border-amber-200/80 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div class="p-3 bg-amber-100 text-amber-800 rounded-xl shrink-0">
+                    <i data-lucide="lightbulb" class="w-6 h-6"></i>
+                </div>
+                <div class="space-y-1">
+                    <h4 class="font-display font-bold text-amber-950 text-base">The Big Shift for Domain Experts:</h4>
+                    <p class="text-xs sm:text-sm text-amber-900/80 leading-relaxed">
+                        In 2026, **you don't need to be a coder** or memorize technical programming rules. Because you know Eaton's supply chain processes inside-out (vendor delays, customs holds, lead time variance), **your domain knowledge is the prompt**. AI takes your instructions and does the heavy lifting!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: DECODING THE AI ASSEMBLY -->
+        <section id="assembly" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 space-y-8">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-eaton-blue uppercase tracking-wider">How Modern AI Works</span>
+                <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900 mt-1">Understanding "The AI Assembly" (Without Coding Jargon)</h2>
+                <p class="text-xs sm:text-sm text-slate-500 mt-1">Here is how developers and analysts talk about AI systems today. It's just like running an enterprise supply chain team!</p>
+            </div>
+
+            <!-- Analogies Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Concept 1: SPEC FILE -->
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition">
+                    <div class="p-2 bg-blue-100 text-eaton-blue w-fit rounded-lg">
+                        <i data-lucide="file-text" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-900">1. The Spec File</h3>
+                    <p class="text-xs font-semibold text-eaton-blue">Supply Chain Analogy: <br><span class="font-normal text-slate-600">The Purchase Order & Requirements Sheet</span></p>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        This is where you state exactly what needs to be done, corner cases, vendor terms, and expected outputs. Clear spec = flawless execution.
+                    </p>
+                </div>
+
+                <!-- Concept 2: THE AGENT -->
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition">
+                    <div class="p-2 bg-teal-100 text-teal-800 w-fit rounded-lg">
+                        <i data-lucide="bot" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-900">2. The AI Agent</h3>
+                    <p class="text-xs font-semibold text-teal-800">Supply Chain Analogy: <br><span class="font-normal text-slate-600">The Smart Supply Chain Analyst</span></p>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        The reasoning worker. It reads your Spec, thinks logically, figures out how to solve the task, and Coordinates the workload automatically.
+                    </p>
+                </div>
+
+                <!-- Concept 3: SKILLS -->
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition">
+                    <div class="p-2 bg-purple-100 text-purple-800 w-fit rounded-lg">
+                        <i data-lucide="wrench" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-900">3. Agent Skills</h3>
+                    <p class="text-xs font-semibold text-purple-800">Supply Chain Analogy: <br><span class="font-normal text-slate-600">Specialized Standard Operating Procedures (SOPs)</span></p>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        A skill is a specific playbook plugged into the agent (e.g., "Customs Tariff Calculator" or "Vendor Risk Audit Matrix").
+                    </p>
+                </div>
+
+                <!-- Concept 4: GUARDRAILS -->
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition">
+                    <div class="p-2 bg-amber-100 text-amber-800 w-fit rounded-lg">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-900">4. Guardrails</h3>
+                    <p class="text-xs font-semibold text-amber-800">Supply Chain Analogy: <br><span class="font-normal text-slate-600">Quality Cont
