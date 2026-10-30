@@ -50,15 +50,46 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(229, 231, 235, 0.8);
         }
+        /* Teasing Animations */
+        @keyframes float-heart {
+            0%, 100% { transform: translateY(0px) rotate(-3deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+        .animate-float {
+            animation: float-heart 3s ease-in-out infinite;
+        }
+        @keyframes playful-wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-8deg); }
+            75% { transform: rotate(8deg); }
+        }
+        .hover-wiggle:hover {
+            animation: playful-wiggle 0.3s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(0, 83, 155, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(0, 83, 155, 0.5); }
+        }
+        .animate-glow {
+            animation: pulse-glow 2.5s infinite;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+<body class="bg-slate-50 text-slate-800 antialiased font-sans relative overflow-x-hidden">
+
+    <!-- Floating Background Teasers -->
+    <div class="fixed top-20 left-4 pointer-events-none opacity-20 hidden md:block animate-float">
+        <span class="text-4xl">📦</span>
+    </div>
+    <div class="fixed bottom-20 right-6 pointer-events-none opacity-20 hidden md:block animate-float" style="animation-delay: 1.5s;">
+        <span class="text-4xl">⚡</span>
+    </div>
 
     <!-- Navigation / Header Bar -->
     <header class="sticky top-0 z-50 glass-panel border-b border-slate-200/80">
         <div class="max-w-6xl mx-auto px-4 py-3.5 flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <div class="bg-eaton-blue text-white p-2 rounded-lg font-bold text-lg leading-none">R</div>
+                <div class="bg-eaton-blue text-white p-2 rounded-lg font-bold text-lg leading-none hover-wiggle">R</div>
                 <div>
                     <span class="font-display font-bold text-slate-900 tracking-tight">Rutuja's AI Digest</span>
                     <span class="hidden sm:inline-block text-xs bg-eaton-light text-eaton-blue px-2 py-0.5 rounded-full font-medium ml-2">Eaton Supply Chain Edition</span>
@@ -78,9 +109,9 @@
 
         <!-- Hero Section -->
         <section class="text-center py-10 space-y-6 relative overflow-hidden">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs sm:text-sm font-semibold border border-amber-200 shadow-sm">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs sm:text-sm font-semibold border border-amber-200 shadow-sm animate-bounce">
                 <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
-                Special Briefing for the Best Supply Chain Analyst at Eaton
+                Official Mandate from Chief AI Officer Piyush 😜
             </div>
             
             <h1 class="text-4xl sm:text-6xl font-display font-extrabold text-slate-900 tracking-tight max-w-3xl mx-auto leading-tight">
@@ -90,6 +121,23 @@
             <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto font-light leading-relaxed">
                 From dial-up internet and floppy disks to managing global supply chain lead times. Welcome to 2026, where AI is officially the new <strong class="text-slate-900 font-semibold">Excel & PowerPoint</strong>!
             </p>
+
+            <div class="bg-rose-50 border border-rose-200 rounded-2xl p-4 max-w-md mx-auto text-xs text-rose-800 shadow-sm animate-float">
+                <span class="font-bold">⚠️ Warning for Rutuja:</span> Piyush is officially assuming the role of your Home AI Manager today. Performance reviews are scheduled after coffee! ☕😜
+            </div>
+
+            <!-- Added Interactive Manager Rating Widget -->
+            <div class="p-4 bg-white/80 backdrop-blur rounded-2xl border border-slate-200 max-w-sm mx-auto space-y-2 text-xs shadow-sm">
+                <p class="font-bold text-slate-800">Rate Manager Piyush's AI Briefing so far: 😜</p>
+                <div class="flex justify-center gap-2 text-xl" id="manager-stars">
+                    <button onclick="rateManager(1)" class="hover:scale-125 transition">⭐</button>
+                    <button onclick="rateManager(2)" class="hover:scale-125 transition">⭐</button>
+                    <button onclick="rateManager(3)" class="hover:scale-125 transition">⭐</button>
+                    <button onclick="rateManager(4)" class="hover:scale-125 transition">⭐</button>
+                    <button onclick="rateManager(5)" class="hover:scale-125 transition">⭐</button>
+                </div>
+                <p id="manager-rating-msg" class="text-[11px] text-eaton-blue font-semibold min-h-[16px]"></p>
+            </div>
 
             <div class="flex justify-center items-center gap-3 pt-2 text-xs font-mono text-slate-500">
                 <span class="bg-slate-200/70 px-2.5 py-1 rounded">Floppy Disks ➔ GenAI</span>
@@ -170,12 +218,12 @@
 
                 <!-- Quiz Reward / Unlocked Banner -->
                 <div id="quiz-complete" class="hidden p-5 bg-emerald-50 border border-emerald-200 rounded-xl text-center space-y-2 animate-fade-in">
-                    <div class="inline-flex p-2 bg-emerald-100 rounded-full text-emerald-700 mb-1">
+                    <div class="inline-flex p-2 bg-emerald-100 rounded-full text-emerald-700 mb-1 animate-bounce">
                         <i data-lucide="trophy" class="w-6 h-6"></i>
                     </div>
                     <h3 class="font-display font-bold text-emerald-950 text-lg">Verification Complete! 🎉</h3>
                     <p class="text-sm text-emerald-800 max-w-xl mx-auto">
-                        You're officially qualified as a true '90s kid & Eaton domain master. Now let's explore why AI isn't replacing your work, but taking away all the boring manual parts of it!
+                        You're officially qualified as a true '90s kid & Eaton domain master. (Piyush approves your performance review with 5 stars! ⭐⭐⭐⭐⭐)
                     </p>
                 </div>
             </div>
@@ -262,45 +310,10 @@
             <!-- Analogies Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <!-- Concept 1: SPEC FILE -->
-                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition">
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition hover-wiggle">
                     <div class="p-2 bg-blue-100 text-eaton-blue w-fit rounded-lg">
                         <i data-lucide="file-text" class="w-5 h-5"></i>
                     </div>
                     <h3 class="font-display font-bold text-slate-900">1. The Spec File</h3>
                     <p class="text-xs font-semibold text-eaton-blue">Supply Chain Analogy: <br><span class="font-normal text-slate-600">The Purchase Order & Requirements Sheet</span></p>
-                    <p class="text-xs text-slate-500 leading-relaxed">
-                        This is where you state exactly what needs to be done, corner cases, vendor terms, and expected outputs. Clear spec = flawless execution.
-                    </p>
-                </div>
-
-                <!-- Concept 2: THE AGENT -->
-                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition">
-                    <div class="p-2 bg-teal-100 text-teal-800 w-fit rounded-lg">
-                        <i data-lucide="bot" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-slate-900">2. The AI Agent</h3>
-                    <p class="text-xs font-semibold text-teal-800">Supply Chain Analogy: <br><span class="font-normal text-slate-600">The Smart Supply Chain Analyst</span></p>
-                    <p class="text-xs text-slate-500 leading-relaxed">
-                        The reasoning worker. It reads your Spec, thinks logically, figures out how to solve the task, and Coordinates the workload automatically.
-                    </p>
-                </div>
-
-                <!-- Concept 3: SKILLS -->
-                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition">
-                    <div class="p-2 bg-purple-100 text-purple-800 w-fit rounded-lg">
-                        <i data-lucide="wrench" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-slate-900">3. Agent Skills</h3>
-                    <p class="text-xs font-semibold text-purple-800">Supply Chain Analogy: <br><span class="font-normal text-slate-600">Specialized Standard Operating Procedures (SOPs)</span></p>
-                    <p class="text-xs text-slate-500 leading-relaxed">
-                        A skill is a specific playbook plugged into the agent (e.g., "Customs Tariff Calculator" or "Vendor Risk Audit Matrix").
-                    </p>
-                </div>
-
-                <!-- Concept 4: GUARDRAILS -->
-                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition">
-                    <div class="p-2 bg-amber-100 text-amber-800 w-fit rounded-lg">
-                        <i data-lucide="shield-check" class="w-5 h-5"></i>
-                    </div>
-                    <h3 class="font-display font-bold text-slate-900">4. Guardrails</h3>
-                    <p class="text-xs font-semibold text-amber-800">Supply Chain Analogy: <br><span class="font-normal text-slate-600">Quality Cont
+                    <p class="text-xs tex
