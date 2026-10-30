@@ -307,7 +307,7 @@
                 <p class="text-xs sm:text-sm text-slate-500 mt-1">Here is how developers and analysts talk about AI systems today. It's just like running an enterprise supply chain team!</p>
             </div>
 
-            <!-- Analogies Grid -->
+                      <!-- Analogies Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <!-- Concept 1: SPEC FILE -->
                 <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition hover-wiggle">
@@ -316,4 +316,597 @@
                     </div>
                     <h3 class="font-display font-bold text-slate-900">1. The Spec File</h3>
                     <p class="text-xs font-semibold text-eaton-blue">Supply Chain Analogy: <br><span class="font-normal text-slate-600">The Purchase Order & Requirements Sheet</span></p>
-                    <p class="text-xs tex
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        This is where you state exactly what needs to be done, corner cases, vendor terms, and expected outputs. Clear spec = flawless execution.
+                    </p>
+                </div>
+
+                <!-- Concept 2: THE AGENT -->
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition hover-wiggle">
+                    <div class="p-2 bg-teal-100 text-teal-800 w-fit rounded-lg">
+                        <i data-lucide="bot" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-900">2. The AI Agent</h3>
+                    <p class="text-xs font-semibold text-teal-800">Supply Chain Analogy: <br><span class="font-normal text-slate-600">Piyush (Your Personal AI Manager) 👔</span></p>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        The reasoning worker. It reads your Spec, thinks logically, figures out how to solve the task, and coordinates the workload automatically.
+                    </p>
+                </div>
+
+                <!-- Concept 3: SKILLS -->
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition hover-wiggle">
+                    <div class="p-2 bg-purple-100 text-purple-800 w-fit rounded-lg">
+                        <i data-lucide="wrench" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-900">3. Agent Skills</h3>
+                    <p class="text-xs font-semibold text-purple-800">Supply Chain Analogy: <br><span class="font-normal text-slate-600">Specialized Standard Operating Procedures (SOPs)</span></p>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        A skill is a specific playbook plugged into the agent (e.g., "Customs Tariff Calculator" or "Brewing Hot Chai Skill").
+                    </p>
+                </div>
+
+                <!-- Concept 4: GUARDRAILS -->
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3 hover:border-eaton-blue transition hover-wiggle">
+                    <div class="p-2 bg-amber-100 text-amber-800 w-fit rounded-lg">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-slate-900">4. Guardrails</h3>
+                    <p class="text-xs font-semibold text-amber-800">Supply Chain Analogy: <br><span class="font-normal text-slate-600">Rutuja's Approval Gateway</span></p>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Automatic safety checks (like security scans or permission matrices) that prevent AI from hallucinating or skipping coffee breaks.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Interactive Architecture Visualizer -->
+            <div class="bg-slate-900 text-white rounded-xl p-6 space-y-4">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="workflow" class="w-5 h-5 text-eaton-blue"></i>
+                        <span class="font-display font-bold text-sm">Interactive Visualizer: How Rutuja Commands an AI Assembly</span>
+                    </div>
+                    <span class="text-[11px] text-slate-400 font-mono">Click a component below to highlight flow</span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-xs">
+                    <div id="vis-spec" onclick="highlightVis('spec')" class="p-3 bg-slate-800 rounded-lg border border-slate-700 hover:border-blue-400 cursor-pointer transition">
+                        <span class="text-blue-400 font-bold block mb-1">INPUT</span>
+                        <strong>Rutuja's Spec File</strong>
+                        <span class="text-[10px] text-slate-400 block mt-1">"Identify lead time risks across 50 Eaton suppliers."</span>
+                    </div>
+
+                    <div id="vis-agent" onclick="highlightVis('agent')" class="p-3 bg-slate-800 rounded-lg border border-slate-700 hover:border-teal-400 cursor-pointer transition">
+                        <span class="text-teal-400 font-bold block mb-1">PROCESS</span>
+                        <strong>AI Agent + Supply Chain Skill</strong>
+                        <span class="text-[10px] text-slate-400 block mt-1">Reads SAP tables & recalculates safety stock buffer.</span>
+                    </div>
+
+                    <div id="vis-output" onclick="highlightVis('output')" class="p-3 bg-slate-800 rounded-lg border border-slate-700 hover:border-emerald-400 cursor-pointer transition">
+                        <span class="text-emerald-400 font-bold block mb-1">OUTPUT</span>
+                        <strong>Actionable Report</strong>
+                        <span class="text-[10px] text-slate-400 block mt-1">Identifies 3 high-risk vendors & drafts mitigation emails.</span>
+                    </div>
+                </div>
+
+                <div id="vis-desc" class="p-3 bg-slate-800/60 rounded-lg text-xs text-slate-300 font-mono text-center">
+                    👈 Click any block above to see how domain expertise converts directly into AI action!
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: DAY IN THE LIFE COMPARISON -->
+        <section id="day-in-life" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900">A Day in the Life of Rutuja</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">Toggle between the old manual way and the 2026 AI Agent approach.</p>
+                </div>
+
+                <!-- Interactive Toggle Button -->
+                <div class="bg-slate-200 p-1 rounded-xl flex items-center w-fit">
+                    <button id="btn-before" onclick="toggleDay('before')" class="px-4 py-2 rounded-lg text-xs font-bold transition bg-white text-slate-900 shadow-sm">
+                        Before AI (Manual Grind)
+                    </button>
+                    <button id="btn-after" onclick="toggleDay('after')" class="px-4 py-2 rounded-lg text-xs font-bold transition text-slate-600 hover:text-slate-900">
+                        With AI Agent (2026) ✨
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Toggle Content Area -->
+            <div id="day-before" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 space-y-4">
+                <div class="flex items-center gap-2 text-red-600 font-bold text-sm">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    <span>The Old Way: 4 Hours of Manual Data Wrestling</span>
+                </div>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-600 border-l-2 border-slate-200 pl-4">
+                    <li class="relative">
+                        <span class="font-semibold text-slate-800 block">9:00 AM - Data Extraction:</span>
+                        Download 12 different Excel CSV exports from SAP, customs portals, and vendor emails.
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-slate-800 block">11:00 AM - Formula Maintenance:</span>
+                        Fix broken VLOOKUP formulas, eliminate duplicate vendor IDs, and manually align date formats.
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-slate-800 block">1:00 PM - Manual Risk Calculation:</span>
+                        Manually cross-check which plant backorders are affected by shipping delays in Asia.
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-slate-800 block">3:00 PM - PowerPoint Drafting:</span>
+                        Copy-paste static charts into PowerPoint slides for leadership updates.
+                    </li>
+                </ul>
+            </div>
+
+            <div id="day-after" class="hidden bg-gradient-to-br from-slate-900 to-eaton-dark text-white p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4 shadow-xl">
+                <div class="flex items-center gap-2 text-amber-300 font-bold text-sm">
+                    <i data-lucide="zap" class="w-4 h-4"></i>
+                    <span>The 2026 AI Way: 15 Minutes of Strategic Review</span>
+                </div>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-200 border-l-2 border-amber-400/40 pl-4">
+                    <li class="relative">
+                        <span class="font-semibold text-amber-200 block">9:00 AM - Prompting the AI Agent:</span>
+                        Send a natural language spec: <em>"Run the daily Eaton lead-time variance skill across all APAC logistics hubs."</em>
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-amber-200 block">9:05 AM - Automated Agent Execution:</span>
+                        The AI Agent pulls live data from SAP, runs risk calculations, and checks customs flags automatically.
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-amber-200 block">9:10 AM - Reviewing the Audit Trail:</span>
+                        Review the pre-generated executive summary, verify edge-case anomalies, and approve recommended re-routings.
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-amber-200 block">Rest of the Day:</span>
+                        Focus on high-value supplier relationship management, strategic planning, and enjoying well-deserved coffee breaks! ☕
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 5: INTERACTIVE SUPPLY CHAIN AI DEMO -->
+        <section class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-eaton-blue uppercase tracking-wider">Try It Out</span>
+                <h2 class="text-2xl font-display font-bold text-slate-900 mt-1">Interactive Spec-to-Agent Simulator for Eaton Logistics</h2>
+                <p class="text-xs text-slate-500">Select an operational Eaton scenario or type a custom query to test Manager Piyush's AI Agent:</p>
+            </div>
+
+            <!-- Custom Spec Prompt Input -->
+            <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-700 flex items-center justify-between">
+                    <span>Draft Your Custom Supply Chain Spec (Natural Language Prompt):</span>
+                    <span class="text-[10px] text-slate-400 font-normal">e.g. "Check SAP lead times for Plant #42 circuit breakers"</span>
+                </label>
+                <div class="flex gap-2">
+                    <input id="custom-spec-input" type="text" placeholder="Type a supply chain requirement for Manager Piyush's Agent..." class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-eaton-blue transition">
+                    <button onclick="runCustomSim()" class="px-4 py-2.5 bg-eaton-blue hover:bg-eaton-dark text-white rounded-xl text-xs font-bold transition shrink-0 flex items-center gap-1.5 hover-wiggle">
+                        <i data-lucide="play" class="w-3.5 h-3.5"></i> Run Agent
+                    </button>
+                </div>
+            </div>
+
+            <!-- Presets Buttons -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <button onclick="runSim('leadtime')" class="p-3 text-left border rounded-xl hover:border-eaton-blue hover:bg-slate-50 transition text-xs space-y-1">
+                    <div class="font-bold text-slate-800 flex items-center gap-1.5">
+                        <i data-lucide="ship" class="w-4 h-4 text-eaton-blue"></i>
+                        Customs Port Delay
+                    </div>
+                    <p class="text-slate-500">Detect shipment delays at Singapore port & auto-recalculate safety stock.</p>
+                </button>
+
+                <button onclick="runSim('supplier')" class="p-3 text-left border rounded-xl hover:border-eaton-blue hover:bg-slate-50 transition text-xs space-y-1">
+                    <div class="font-bold text-slate-800 flex items-center gap-1.5">
+                        <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+                        Vendor Risk Audit
+                    </div>
+                    <p class="text-slate-500">Audit top 20 component suppliers for tier-2 supply vulnerabilities.</p>
+                </button>
+
+                <button onclick="runSim('inventory')" class="p-3 text-left border rounded-xl hover:border-eaton-blue hover:bg-slate-50 transition text-xs space-y-1">
+                    <div class="font-bold text-slate-800 flex items-center gap-1.5">
+                        <i data-lucide="package-check" class="w-4 h-4 text-emerald-600"></i>
+                        Excess Inventory Alert
+                    </div>
+                    <p class="text-slate-500">Identify holding cost spikes across European distribution centers.</p>
+                </button>
+            </div>
+
+            <!-- Console Output Box -->
+            <div class="bg-slate-900 text-slate-200 p-4 rounded-xl font-mono text-xs space-y-2 min-h-[180px] shadow-inner">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-2 text-[11px] text-slate-400">
+                    <span class="flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        AI Agent Simulation Environment (Manager: Piyush)
+                    </span>
+                    <span id="sim-status" class="text-amber-400 font-bold">Status: Idle</span>
+                </div>
+                <div id="sim-output" class="space-y-1 pt-1 text-slate-300">
+                    <p class="text-slate-500">// Type a prompt or select a preset scenario above to watch the AI Agent execute...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLOSING NOTE FOR RUTUJA -->
+        <section class="bg-gradient-to-r from-eaton-light via-blue-50 to-teal-50 rounded-2xl p-6 sm:p-10 border border-eaton-blue/20 text-center space-y-4 shadow-sm">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-eaton-blue shadow-md animate-bounce">
+                <i data-lucide="heart" class="w-6 h-6 fill-current text-rose-500"></i>
+            </div>
+            
+            <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900">The Bottom Line for Rutuja</h2>
+            
+            <p class="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                You don't need to learn lines of code or complex software syntax. Your most valuable asset has always been—and will always be—your deep understanding of **supply chain business logic**.
+            </p>
+
+            <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto italic">
+                AI is simply the ultimate assistant that speaks your language. And remember, Manager Piyush is always available for 1-on-1 performance chats! 🤪🚀
+            </p>
+
+            <div class="pt-4 flex justify-center gap-3">
+                <a href="#icebreaker" class="px-5 py-2.5 bg-eaton-blue hover:bg-eaton-dark text-white rounded-xl text-xs sm:text-sm font-semibold transition shadow-md flex items-center gap-2 hover-wiggle">
+                    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+                    Back to Top
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 mt-16 py-6 text-center text-xs text-slate-400">
+        <p>Made with ❤️ by Piyush (Your AI Manager) for Rutuja | Eaton Supply Chain Edition (2026)</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Teasing Rating Widget
+        function rateManager(stars) {
+            const msg = document.getElementById('manager-rating-msg');
+            if (stars < 5) {
+                msg.innerText = `Only ${stars} stars? Manager Piyush is requesting a coffee re-evaluation meeting! ☕😜`;
+            } else {
+                msg.innerText = `5 Stars! Manager Piyush grants Rutuja unlimited coffee breaks today! ☕🎉`;
+            }
+        }
+
+        // Quiz State Logic
+        let currentStep = 1;
+        let score = 0;
+
+        function answerQuiz(step, isCorrect, btnElement) {
+            if (isCorrect) score++;
+            
+            // Highlight button
+            if (isCorrect) {
+                btnElement.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900', 'scale-105');
+            } else {
+                btnElement.classList.add('bg-red-50', 'border-red-300', 'text-red-900');
+            }
+
+            // Move to next step after brief delay
+            setTimeout(() => {
+                const currentEl = document.querySelector(`.quiz-step[data-step="${step}"]`);
+                currentEl.classList.add('hidden');
+
+                if (step < 3) {
+                    const nextEl = document.querySelector(`.quiz-step[data-step="${step + 1}"]`);
+                    nextEl.classList.remove('hidden');
+                    document.getElementById('quiz-progress').innerText = `${step} / 3 Done`;
+                } else {
+                    document.getElementById('quiz-progress').innerText = `3 / 3 Complete!`;
+                    document.getElementById('quiz-complete').classList.remove('hidden');
+                }
+            }, 400);
+        }
+
+  <!-- SECTION 4: DAY IN THE LIFE COMPARISON -->
+        <section id="day-in-life" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900">A Day in the Life of Rutuja</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">Toggle between the old manual way and the 2026 AI Agent approach.</p>
+                </div>
+
+                <!-- Interactive Toggle Button -->
+                <div class="bg-slate-200 p-1 rounded-xl flex items-center w-fit">
+                    <button id="btn-before" onclick="toggleDay('before')" class="px-4 py-2 rounded-lg text-xs font-bold transition bg-white text-slate-900 shadow-sm">
+                        Before AI (Manual Grind)
+                    </button>
+                    <button id="btn-after" onclick="toggleDay('after')" class="px-4 py-2 rounded-lg text-xs font-bold transition text-slate-600 hover:text-slate-900">
+                        With AI Agent (2026) ✨
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Toggle Content Area -->
+            <div id="day-before" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 space-y-4">
+                <div class="flex items-center gap-2 text-red-600 font-bold text-sm">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    <span>The Old Way: 4 Hours of Manual Data Wrestling</span>
+                </div>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-600 border-l-2 border-slate-200 pl-4">
+                    <li class="relative">
+                        <span class="font-semibold text-slate-800 block">9:00 AM - Data Extraction:</span>
+                        Download 12 different Excel CSV exports from SAP, customs portals, and vendor emails.
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-slate-800 block">11:00 AM - Formula Maintenance:</span>
+                        Fix broken VLOOKUP formulas, eliminate duplicate vendor IDs, and manually align date formats.
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-slate-800 block">1:00 PM - Manual Risk Calculation:</span>
+                        Manually cross-check which plant backorders are affected by shipping delays in Asia.
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-slate-800 block">3:00 PM - PowerPoint Drafting:</span>
+                        Copy-paste static charts into PowerPoint slides for leadership updates.
+                    </li>
+                </ul>
+            </div>
+
+            <div id="day-after" class="hidden bg-gradient-to-br from-slate-900 to-eaton-dark text-white p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4 shadow-xl">
+                <div class="flex items-center gap-2 text-amber-300 font-bold text-sm">
+                    <i data-lucide="zap" class="w-4 h-4"></i>
+                    <span>The 2026 AI Way: 15 Minutes of Strategic Review</span>
+                </div>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-200 border-l-2 border-amber-400/40 pl-4">
+                    <li class="relative">
+                        <span class="font-semibold text-amber-200 block">9:00 AM - Prompting the AI Agent:</span>
+                        Send a natural language spec: <em>"Run the daily Eaton lead-time variance skill across all APAC logistics hubs."</em>
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-amber-200 block">9:05 AM - Automated Agent Execution:</span>
+                        The AI Agent pulls live data from SAP, runs risk calculations, and checks customs flags automatically.
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-amber-200 block">9:10 AM - Reviewing the Audit Trail:</span>
+                        Review the pre-generated executive summary, verify edge-case anomalies, and approve recommended re-routings.
+                    </li>
+                    <li class="relative">
+                        <span class="font-semibold text-amber-200 block">Rest of the Day:</span>
+                        Focus on high-value supplier relationship management, strategic planning, and enjoying well-deserved coffee breaks! ☕
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 5: INTERACTIVE SUPPLY CHAIN AI DEMO -->
+        <section class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 space-y-6">
+            <div class="border-b border-slate-100 pb-4">
+                <span class="text-xs font-bold text-eaton-blue uppercase tracking-wider">Try It Out</span>
+                <h2 class="text-2xl font-display font-bold text-slate-900 mt-1">Interactive Spec-to-Agent Simulator for Eaton Logistics</h2>
+                <p class="text-xs text-slate-500">Select an operational Eaton scenario or type a custom query to test Manager Piyush's AI Agent:</p>
+            </div>
+
+            <!-- Custom Spec Prompt Input -->
+            <div class="space-y-2">
+                <label class="text-xs font-bold text-slate-700 flex items-center justify-between">
+                    <span>Draft Your Custom Supply Chain Spec (Natural Language Prompt):</span>
+                    <span class="text-[10px] text-slate-400 font-normal">e.g. "Check SAP lead times for Plant #42 circuit breakers"</span>
+                </label>
+                <div class="flex gap-2">
+                    <input id="custom-spec-input" type="text" placeholder="Type a supply chain requirement for Manager Piyush's Agent..." class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-eaton-blue transition">
+                    <button onclick="runCustomSim()" class="px-4 py-2.5 bg-eaton-blue hover:bg-eaton-dark text-white rounded-xl text-xs font-bold transition shrink-0 flex items-center gap-1.5 hover-wiggle">
+                        <i data-lucide="play" class="w-3.5 h-3.5"></i> Run Agent
+                    </button>
+                </div>
+            </div>
+
+            <!-- Presets Buttons -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <button onclick="runSim('leadtime')" class="p-3 text-left border rounded-xl hover:border-eaton-blue hover:bg-slate-50 transition text-xs space-y-1">
+                    <div class="font-bold text-slate-800 flex items-center gap-1.5">
+                        <i data-lucide="ship" class="w-4 h-4 text-eaton-blue"></i>
+                        Customs Port Delay
+                    </div>
+                    <p class="text-slate-500">Detect shipment delays at Singapore port & auto-recalculate safety stock.</p>
+                </button>
+
+                <button onclick="runSim('supplier')" class="p-3 text-left border rounded-xl hover:border-eaton-blue hover:bg-slate-50 transition text-xs space-y-1">
+                    <div class="font-bold text-slate-800 flex items-center gap-1.5">
+                        <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+                        Vendor Risk Audit
+                    </div>
+                    <p class="text-slate-500">Audit top 20 component suppliers for tier-2 supply vulnerabilities.</p>
+                </button>
+
+                <button onclick="runSim('inventory')" class="p-3 text-left border rounded-xl hover:border-eaton-blue hover:bg-slate-50 transition text-xs space-y-1">
+                    <div class="font-bold text-slate-800 flex items-center gap-1.5">
+                        <i data-lucide="package-check" class="w-4 h-4 text-emerald-600"></i>
+                        Excess Inventory Alert
+                    </div>
+                    <p class="text-slate-500">Identify holding cost spikes across European distribution centers.</p>
+                </button>
+            </div>
+
+            <!-- Console Output Box -->
+            <div class="bg-slate-900 text-slate-200 p-4 rounded-xl font-mono text-xs space-y-2 min-h-[180px] shadow-inner">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-2 text-[11px] text-slate-400">
+                    <span class="flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        AI Agent Simulation Environment (Manager: Piyush)
+                    </span>
+                    <span id="sim-status" class="text-amber-400 font-bold">Status: Idle</span>
+                </div>
+                <div id="sim-output" class="space-y-1 pt-1 text-slate-300">
+                    <p class="text-slate-500">// Type a prompt or select a preset scenario above to watch the AI Agent execute...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLOSING NOTE FOR RUTUJA -->
+        <section class="bg-gradient-to-r from-eaton-light via-blue-50 to-teal-50 rounded-2xl p-6 sm:p-10 border border-eaton-blue/20 text-center space-y-4 shadow-sm">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-eaton-blue shadow-md animate-bounce">
+                <i data-lucide="heart" class="w-6 h-6 fill-current text-rose-500"></i>
+            </div>
+            
+            <h2 class="text-2xl sm:text-3xl font-display font-bold text-slate-900">The Bottom Line for Rutuja</h2>
+            
+            <p class="text-sm sm:text-base text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                You don't need to learn lines of code or complex software syntax. Your most valuable asset has always been—and will always be—your deep understanding of **supply chain business logic**.
+            </p>
+
+            <p class="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto italic">
+                AI is simply the ultimate assistant that speaks your language. And remember, Manager Piyush is always available for 1-on-1 performance chats! 🤪🚀
+            </p>
+
+            <div class="pt-4 flex justify-center gap-3">
+                <a href="#icebreaker" class="px-5 py-2.5 bg-eaton-blue hover:bg-eaton-dark text-white rounded-xl text-xs sm:text-sm font-semibold transition shadow-md flex items-center gap-2 hover-wiggle">
+                    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+                    Back to Top
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 mt-16 py-6 text-center text-xs text-slate-400">
+        <p>Made with ❤️ by Piyush (Your AI Manager) for Rutuja | Eaton Supply Chain Edition (2026)</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Teasing Rating Widget
+        function rateManager(stars) {
+            const msg = document.getElementById('manager-rating-msg');
+            if (stars < 5) {
+                msg.innerText = `Only ${stars} stars? Manager Piyush is requesting a coffee re-evaluation meeting! ☕😜`;
+            } else {
+                msg.innerText = `5 Stars! Manager Piyush grants Rutuja unlimited coffee breaks today! ☕🎉`;
+            }
+        }
+
+        // Quiz State Logic
+        let currentStep = 1;
+        let score = 0;
+
+        function answerQuiz(step, isCorrect, btnElement) {
+            if (isCorrect) score++;
+            
+            // Highlight button
+            if (isCorrect) {
+                btnElement.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900', 'scale-105');
+            } else {
+                btnElement.classList.add('bg-red-50', 'border-red-300', 'text-red-900');
+            }
+
+            // Move to next step after brief delay
+            setTimeout(() => {
+                const currentEl = document.querySelector(`.quiz-step[data-step="${step}"]`);
+                currentEl.classList.add('hidden');
+
+                if (step < 3) {
+                    const nextEl = document.querySelector(`.quiz-step[data-step="${step + 1}"]`);
+                    nextEl.classList.remove('hidden');
+                    document.getElementById('quiz-progress').innerText = `${step} / 3 Done`;
+                } else {
+                    document.getElementById('quiz-progress').innerText = `3 / 3 Complete!`;
+                    document.getElementById('quiz-complete').classList.remove('hidden');
+                }
+            }, 400);
+        }
+
+        // Day in the Life Toggle Logic
+        function toggleDay(mode) {
+            const beforeBox = document.getElementById('day-before');
+            const afterBox = document.getElementById('day-after');
+            const btnBefore = document.getElementById('btn-before');
+            const btnAfter = document.getElementById('btn-after');
+
+            if (mode === 'after') {
+                beforeBox.classList.add('hidden');
+                afterBox.classList.remove('hidden');
+                btnAfter.className = "px-4 py-2 rounded-lg text-xs font-bold transition bg-white text-slate-900 shadow-sm animate-glow";
+                btnBefore.className = "px-4 py-2 rounded-lg text-xs font-bold transition text-slate-600 hover:text-slate-900";
+            } else {
+                afterBox.classList.add('hidden');
+                beforeBox.classList.remove('hidden');
+                btnBefore.className = "px-4 py-2 rounded-lg text-xs font-bold transition bg-white text-slate-900 shadow-sm";
+                btnAfter.className = "px-4 py-2 rounded-lg text-xs font-bold transition text-slate-600 hover:text-slate-900";
+            }
+        }
+
+        // Architecture Visualizer Highlight Logic
+        function highlightVis(type) {
+            const desc = document.getElementById('vis-desc');
+            if (type === 'spec') {
+                desc.innerHTML = "<span class='text-blue-400 font-bold'>SPEC FILE:</span> Written by Rutuja in plain business language, laying out rules, suppliers, and edge cases.";
+            } else if (type === 'agent') {
+                desc.innerHTML = "<span class='text-teal-400 font-bold'>AGENT + SKILLS:</span> Reads the spec, executes API calls to SAP, and runs inventory algorithms without breaking sweat.";
+            } else if (type === 'output') {
+                desc.innerHTML = "<span class='text-emerald-400 font-bold'>OUTPUT:</span> Clean, verified recommendations ready for Rutuja to review and approve!";
+            }
+        }
+
+        // Custom Spec Runner
+        function runCustomSim() {
+            const input = document.getElementById('custom-spec-input').value.trim();
+            if (!input) return;
+
+            const consoleEl = document.getElementById('sim-output');
+            const statusEl = document.getElementById('sim-status');
+
+            statusEl.innerText = "Status: Executing...";
+            statusEl.className = "text-emerald-400 font-bold animate-pulse";
+
+            consoleEl.innerHTML = `<p class="text-amber-400 font-bold">>[RUTUJA_SPEC]: "${input}"</p>`;
+            consoleEl.innerHTML += '<p class="text-slate-400">>[AGENT_INIT]: Manager Piyush\'s Agent analyzing Eaton process logic...</p>';
+
+            setTimeout(() => {
+                consoleEl.innerHTML += `
+                    <p class="text-slate-300">>[SAP_API]: Authenticating claims via Eaton SSO & Active Directory...</p>
+                    <p class="text-slate-300">>[EXECUTE]: Processing parameters & verifying edge cases across 71 factory contexts...</p>
+                    <p class="text-emerald-400 font-bold">>[SUCCESS]: Task completed cleanly in 1.2s! Executive summary generated for Rutuja.</p>
+                `;
+                statusEl.innerText = "Status: Complete";
+                statusEl.className = "text-emerald-400 font-bold";
+            }, 600);
+        }
+
+        // Simulation Console Output Logic
+        function runSim(scenario) {
+            const consoleEl = document.getElementById('sim-output');
+            const statusEl = document.getElementById('sim-status');
+
+            statusEl.innerText = "Status: Executing...";
+            statusEl.className = "text-emerald-400 font-bold animate-pulse";
+
+            consoleEl.innerHTML = '<p class="text-amber-400 font-bold">>[AGENT_INIT]: Loading Eaton Supply Chain Skill Module...</p>';
+
+            setTimeout(() => {
+                if (scenario === 'leadtime') {
+                    consoleEl.innerHTML += `
+                        <p class="text-slate-300">>[INFO]: Accessing Singapore Port shipment logs...</p>
+                        <p class="text-slate-300">>[DETECT]: 4 containers carrying Eaton circuit breaker housing delayed by 3 days.</p>
+                        <p class="text-emerald-400 font-bold">>[SUCCESS]: Safety stock buffer automatically recalculated for Plant #14. Mitigation notice drafted for Rutuja's approval.</p>
+                    `;
+                } else if (scenario === 'supplier') {
+                    consoleEl.innerHTML += `
+                        <p class="text-slate-300">>[INFO]: Scanning Tier-2 component suppliers for raw aluminum shortages...</p>
+                        <p class="text-amber-300">>[FLAG]: Supplier 'Apex Metals' risk score increased to 78% due to regional energy rationing.</p>
+                        <p class="text-emerald-400 font-bold">>[RECOMMENDATION]: Re-route 15% procurement quota to secondary supplier in Europe.</p>
+                    `;
+                } else if (scenario === 'inventory') {
+                    consoleEl.innerHTML += `
+                        <p class="text-slate-300">>[INFO]: Cross-referencing holding costs across European distribution centers...</p>
+                        <p class="text-slate-300">>[DETECT]: Excess inventory detected for Model-X transformers in Frankfurt hub.</p>
+                        <p class="text-emerald-400 font-bold">>[ACTION]: Transfer suggestion generated to fulfill shortage at Munich facility. Estimated saving: $14,200.</p>
+                    `;
+                }
+                statusEl.innerText = "Status: Complete";
+                statusEl.className = "text-emerald-400 font-bold";
+            }, 500);
+        }
+    </script>
+</body>
+</html>
